@@ -103,3 +103,89 @@
   position: absolute;
   top: -50px;
 }
+
+
+/* ========== Responsive Styles ========== */
+@media (max-width: 1024px) {
+  .strategy-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .strategy-content {
+    max-width: 100%;
+  }
+
+  .strategy-content h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .strategy-text p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .strategy-services {
+    align-items: center;
+  }
+
+  .service-item {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    max-width: 400px;
+  }
+
+  .service-info h4,
+  .service-info p {
+    text-align: left;
+  }
+
+  .strategy-image {
+    justify-content: center;
+  }
+
+  .compass-wrapper {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .strategy-section {
+    padding: 60px 16px;
+  }
+
+  .strategy-content h1 {
+    font-size: 20px;
+  }
+
+  .strategy-text p {
+    font-size: 13px;
+  }
+
+  .compass-wrapper {
+    width: 260px;
+    height: 260px;
+  }
+
+  .service-item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .service-icon img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .service-info h4 {
+    font-size: 14px;
+  }
+
+  .service-info p {
+    font-size: 12px;
+  }
+}

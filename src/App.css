@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -11,24 +11,28 @@ body {
   color: #111;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .app {
   min-height: 100vh;
-  position: relative;
   overflow-x: hidden;
 }
 
 /* Topbar */
 .topbar {
   width: 100%;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   padding: 20px 0;
-  position: sticky;
-  top: 0;
-  background: #ffffffcc; /* slightly transparent */
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e5e7eb;
-  z-index: 10;
 }
 
 .topbar-inner {
@@ -37,52 +41,38 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 0.5px solid rgb(226, 223, 223);
+  border: 0.5px solid #e2dfdf;
   border-radius: 15px;
-  padding: 10px;
+  padding: 10px 20px;
+  position: relative;
+  background-color: white;
 }
 
-/* Logo section */
+/* Logo */
 .logo-section {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .logo {
-  width: 20%;
+  height: 40px;
+  max-width: 160px;
 }
 
-.logo-text {
+/* Desktop Navigation */
+.nav {
   display: flex;
-  flex-direction: column;
-  font-size: 11px;
-  line-height: 1.1;
-}
-
-.logo-title {
-  font-weight: bold;
-}
-
-.logo-subtitle {
-  font-size: 10px;
-  color: #666;
-}
-
-/* Navigation links */
-.navigation {
-  display: flex;
+  align-items: center;
   gap: 30px;
 }
 
-.navigation a {
-  text-decoration: none;
-  color: #222;
+.nav a {
   font-size: 14px;
   font-weight: 500;
+  color: #222;
 }
 
-/* Right side buttons */
+/* Action Buttons */
 .actions {
   display: flex;
   align-items: center;
@@ -91,11 +81,11 @@ body {
 
 .contact-button {
   padding: 8px 16px;
-  border: 1px solid #ccc;
-  background: transparent;
-  border-radius: 6px;
   font-size: 13px;
   font-weight: 500;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -109,7 +99,25 @@ body {
   height: auto;
 }
 
-/* Hero section */
+/* Burger Menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.bar {
+  width: 24px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Hero Section */
 .hero {
   min-height: calc(100vh - 100px);
   display: flex;
@@ -117,8 +125,9 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 60px 20px;
+  background-color: #f9fbfc;
   position: relative;
-  padding: 40px 20px;
 }
 
 .hero::before {
@@ -163,4 +172,129 @@ body {
 
 .appointment-button:hover {
   background: #1a52d1;
+}
+
+/* Sidebar Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+  background: #fff;
+  padding: 60px 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-nav a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .nav,
+  .actions.desktop-only {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .flag {
+    width: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .appointment-button {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo {
+    max-width: 120px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .appointment-button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .contact-button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* Utility */
+.no-scroll {
+  overflow: hidden;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .mobile-only {
+    display: block;
+  }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import './WhyIDoThis.css';
-import checkIcon from '../../Assets/check-icon.png'; // Replace with your own
-import chartIcon from '../../Assets/chart-icon.png'; // Optional floating icon
+import checkIcon from '../../Assets/check-icon.png';
 
 const benefits = [
   { label: 'Cost Efficient', value: 9 },
@@ -24,11 +23,9 @@ const WhyIDoThis = () => {
           <ul className="checklist">
             <li><img src={checkIcon} alt="check" /> Driving culture, ethics, and strategic clarity</li>
             <li><img src={checkIcon} alt="check" /> I bring fresh perspective, fast impact, and a deep commitment to knowledge transfer</li>
-            <li><img src={checkIcon} alt="check" /> I shaped by years of navigating diverse corporate landscapes.</li>
+            <li><img src={checkIcon} alt="check" /> I am shaped by years of navigating diverse corporate landscapes.</li>
           </ul>
-          <button className="more-btn">
-            More <span>→</span>
-          </button>
+          <button className="more-btn">More <span>→</span></button>
         </div>
 
         <div className="why-right">
@@ -37,18 +34,18 @@ const WhyIDoThis = () => {
             <ul className="bar-list">
               {benefits.map((item, index) => (
                 <li key={index}>
-                  <span>{item.label}</span>
-                  <div className="bar">
-                    <div className="fill" style={{ width: `${(item.value / 10) * 100}%` }}></div>
-                    <span className="score">{item.value}</span>
+                  <div className="bar-item">
+                    <span className="bar-label">{item.label}</span>
+                    <div className="bar-wrapper">
+                      <div className="bar-fill" style={{ width: `${(item.value / 10) * 100}%` }}></div>
+                      <span className="bar-score">{item.value}</span>
+                    </div>
                   </div>
                 </li>
               ))}
             </ul>
             <p className="score-note">Benefit Impact (simulated Score)</p>
           </div>
-
-         {/* <img src={chartIcon} alt="decoration" className="floating-icon" /> */}
         </div>
       </div>
     </section>
