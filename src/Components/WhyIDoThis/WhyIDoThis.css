@@ -1,0 +1,153 @@
+.why-section {
+    background: #f9fafb;
+    padding: 100px 60px;
+  }
+  
+  .why-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    position: relative;
+  }
+  
+  .why-left {
+    flex: 1;
+    max-width: 640px;
+  }
+  
+  .why-left .tag {
+    color: #3b82f6;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .why-left h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111827;
+    margin: 10px 0 20px;
+  }
+  
+  .why-left .description {
+    font-size: 16px;
+    color: #374151;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+  }
+  
+  .checklist li {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #111827;
+    margin-bottom: 16px;
+  }
+  
+  .checklist img {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+  
+  .more-btn {
+    background: white;
+    border: 1px solid #d1d5db;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .more-btn:hover {
+    background: #f3f4f6;
+  }
+  
+  .why-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+  
+  .chart-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    width: 500px;
+    z-index: 2;
+  }
+  
+  .chart-card h4 {
+    font-size: 18px;
+    color: #111827;
+    margin-bottom: 30px;
+  }
+  
+  .bar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .bar-list li {
+    margin-bottom: 20px;
+  }
+  
+  .bar-list span {
+    display: block;
+    font-size: 15px;
+    color: #374151;
+    margin-bottom: 6px;
+  }
+  
+  .bar {
+    background: #e5e7eb;
+    border-radius: 8px;
+    height: 8px;
+    position: relative;
+  }
+  
+  .bar .fill {
+    background: #3b82f6;
+    height: 100%;
+    border-radius: 8px;
+  }
+  
+  .bar .score {
+    position: absolute;
+    right: 0;
+    top: -22px;
+    font-size: 13px;
+    color: #1f2937;
+  }
+  
+  .score-note {
+    text-align: right;
+    font-size: 13px;
+    color: #3b82f6;
+    margin-top: 10px;
+  }
+  
+  .floating-icon {
+    position: absolute;
+    bottom: -30px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+  }
+  
